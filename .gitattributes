@@ -1,1 +1,25 @@
+# Forçar tudo para LF (ideal para servidores Linux)
 * text=auto eol=lf
+
+# Arquivos binários (não converter)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.zip  binary
+*.ttf  binary
+*.woff binary
+*.woff2 binary
+*.eot  binary
+*.pdf  binary
+
+# Evitar problemas com JS/CSS minificados
+*.min.js text eol=lf
+*.min.css text eol=lf
+
+# PHP, CSS, JS, HTML → sempre LF
+*.php text eol=lf
+*.css text eol=lf
+*.js  text eol=lf
+*.html text eol=lf
+*.htm text eol=lf

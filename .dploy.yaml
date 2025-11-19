@@ -1,0 +1,23 @@
+version: 1
+
+deploy:
+  environment:
+    # domínio dinâmico
+    path: /home/{USER}/{{DOMAIN}}/htdocs
+
+  branches:
+    main:
+      strategy: incremental
+      commands:
+        - "find . -type d -exec chmod 755 {} \\;"
+        - "find . -type f -exec chmod 644 {} \\;"
+        - "chmod +x install.sh"
+
+      excludes:
+        - ".git"
+        - ".github"
+        - "node_modules"
+        - ".env"
+        - ".vscode"
+        - ".idea"
+        - "README.md"
